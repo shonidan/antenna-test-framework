@@ -76,7 +76,6 @@ def clean_screenshots_before_test():
     """Fixture que limpia screenshots antes de cada test automáticamente."""
     clear_screenshots()
     yield
-    # Si querés limpiar después del test también, podés poner clear_screenshots() acá.
 
 @pytest.fixture
 def screenshot(driver):
