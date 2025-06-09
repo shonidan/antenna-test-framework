@@ -1,0 +1,29 @@
+# PyCharm
+.idea/
+*.iml
+*.iws
+out/
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Archivos de Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Variables de entorno
+.env
+
+# Ignorar carpetas tests que empiecen con "screenshot"
+tests/screenshot*/
+
+# Logs y archivos temporales
+*.log
+*.tmp
+*.bak
+
+# Otros
+.DS_Store

@@ -1,0 +1,24 @@
+name: Run Tests
+
+on:
+  repository_dispatch:
+    types: [run-tests]
+
+jobs:
+  test-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout framework
+        uses: actions/checkout@v3
+
+      - name: Instalar dependencias
+        run: |
+          pip install -r requirements.txt
+
+      - name: Descargar APK
+        run: |
+          curl -L -o app-under-test.apk https://github.com/tu-usuario/antenna-apk-versions/raw/main/apks/AntennaPod_v${{ github.event.client_payload.apk_version }}.apk
+
+      - name: Lanzar emulador y correr tests
+        run: |
+          pytest tests/
