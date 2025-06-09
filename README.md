@@ -3,7 +3,7 @@
 
 Requisitos previos
 
-Antes de empezar, asegurate de tener instaladas las siguientes herramientas:
+Tener instalados los siguientes paquetes:
 
     JDK 8 (jdk8-openjdk)
 
@@ -11,21 +11,31 @@ Antes de empezar, asegurate de tener instaladas las siguientes herramientas:
 
     Node.js y npm (nodejs, npm)
 
-Instalá las dependencias de Python:
+Instalacion de dependencias Python:
 
     pip install -r requirements.txt
 
-Instalá Appium y su driver para Android:
+Instalacion de Appium drivers para Android:
 
     npm install -g appium
     appium driver install uiautomator2
 
 Configuración
 
-Creá un archivo .env en la raíz del proyecto con tus credenciales de Spotify https://developer.spotify.com/:
+Creacion de archivo .env en la raíz del proyecto con credenciales extraidas de Spotify https://developer.spotify.com/:
 
     SPOTIFY_CLIENT_ID=tu-client-id
     SPOTIFY_CLIENT_SECRET=tu-client-secret
 
+Como correr los test:
+Dispositivo android debe tener dubbug prendido y certificados autorizados.
+Conectar dispositivo android y ejecutar en consola:
+
+    appium
 
 
+En otra terminal correr:
+    
+    pytest tests/
+
+El conftest detecta por medio de ADB los desired caps para las pruebas en entorno local.
