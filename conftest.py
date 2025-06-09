@@ -46,6 +46,7 @@ def driver(caps):
     subprocess.run(["adb", "-s", device_id, "uninstall", package], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     subprocess.run(["adb", "-s", device_id, "install", apk_path], check=True)
 
+    os.system("appium &")
     driver = webdriver.Remote("http://localhost:4723", options=caps)
 
     yield driver
