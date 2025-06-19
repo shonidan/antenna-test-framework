@@ -15,7 +15,6 @@ def test_bottom_buttons(driver, screenshot):
     home_page_text = homepage.go_to_home()
     screenshot("home_page")
     assert "Inicio" in home_page_text.text
-    driver.quit()
 
 @pytest.mark.integration
 def test_search_podcast(driver, screenshot):
